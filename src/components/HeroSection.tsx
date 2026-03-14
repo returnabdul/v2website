@@ -5,7 +5,6 @@ import { Button } from "@src/components/ui/button";
 export function HeroSection() {
     return (
         <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden pt-16">
-            {/* Tailwind radial gradient background */}
             <div className="absolute inset-0 bg-gradient-radial from-white via-purple-100 via-purple-300 to-purple-700" />
 
             <div className="relative z-10 text-center px-4 animate-fade-up">

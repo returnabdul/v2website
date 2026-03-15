@@ -1,10 +1,10 @@
 import type { Metadata }    from "next";
-import { Lexend }           from "next/font/google";
+import { Lexend, Inter }           from "next/font/google";
 import { cn }               from "@src/lib/utils";
 import { Providers }        from "@src/app/providers";
 import                      "@src/app/globals.css";
 
-const lexend = Lexend({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 export const metadata: Metadata = {
     title: "URAI",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
     return (
         <html   lang="en" suppressHydrationWarning
-                className={cn("font-sans", lexend.variable)}>
+                className={cn("font-sans", inter.variable)}>
             <body>
                 <Providers>
                     { children }

@@ -1,5 +1,4 @@
-import { HeroSection }      from "@src/components/HeroSection";
-import { Navbar }           from "@src/components/Navbar";
+import { LandingPage }      from "@src/components/LandingPage";
 import { StatsSection }     from "@src/components/StatsSection";
 import { MissionSection }   from "@src/components/MissionSection";
 import { EventsSection }    from "@src/components/EventsSection";
@@ -18,9 +17,11 @@ export default function Home() {
                     alt: "URAI Logo",
                     title: "",
                 }}
+
+                // TODO: add manu items
             />
             <main>
-                <HeroSection />
+                <LandingPage />
                 <StatsSection />
                 <MissionSection />
                 <EventsSection />

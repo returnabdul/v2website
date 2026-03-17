@@ -142,7 +142,7 @@ const Navbar1 = ({
   className,
 }: Navbar1Props) => {
   return (
-    <section className={cn("sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50", className)}>
+    <section className={cn("sticky top-0 z-50 bg-background/30 backdrop-blur-sm border-b border-border/50", className)}>
       <div className="w-full px-10">
 
         {/* Desktop Menu */}

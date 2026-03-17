@@ -5,7 +5,7 @@ import { EventsSection }    from "@src/components/EventsSection";
 import { TopicsSection }    from "@src/components/TopicsSection";
 import { CtaSection }       from "@src/components/CtaSection";
 import { Footer }           from "@src/components/Footer";
-import { Navbar1 }          from "@src/components/navbar1";
+import { Navbar1 }          from "@src/components/Navbar1";
 
 export default function Home() {
     return (

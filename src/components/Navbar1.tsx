@@ -1,6 +1,7 @@
 "use client";
 
-import { Book, Menu, Sunset, Trees, Zap } from "lucide-react";
+import { Book, Menu, Sunset, Trees, Zap, Sun, Moon } from "lucide-react";
+import { useTheme } from "next-themes";
 
 import {
   Accordion,
@@ -141,6 +142,9 @@ const Navbar1 = ({
   },
   className,
 }: Navbar1Props) => {
+
+  const { theme, setTheme } = useTheme();
+
   return (
     <section className={cn("sticky top-0 z-50 bg-background/30 backdrop-blur-sm border-b border-border/50", className)}>
       <div className="w-full px-10">
@@ -168,6 +172,17 @@ const Navbar1 = ({
             </div>
           </div>
           <div className="flex gap-2">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            >
+              {theme === "dark" ? (
+                <Sun className="size-4" />
+              ) : (
+                <Moon className="size-4" />
+              )}
+            </Button>
             <Button asChild variant="outline" size="sm">
               <a href={auth.login.url}>{auth.login.title}</a>
             </Button>
@@ -216,6 +231,23 @@ const Navbar1 = ({
                   </Accordion>
 
                   <div className="flex flex-col gap-3">
+                    <Button
+                      variant="outline"
+                      className="w-full justify-start"
+                      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                    >
+                      {theme === "dark" ? (
+                        <>
+                          <Sun className="size-4 mr-2" />
+                          Light Mode
+                        </>
+                      ) : (
+                        <>
+                          <Moon className="size-4 mr-2" />
+                          Dark Mode
+                        </>
+                      )}
+                    </Button>
                     <Button asChild variant="outline">
                       <a href={auth.login.url}>{auth.login.title}</a>
                     </Button>

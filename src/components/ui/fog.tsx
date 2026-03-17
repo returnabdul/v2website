@@ -31,7 +31,7 @@ export function VantaFog({ children }: { children?: React.ReactNode }) {
   }, [vantaEffect?.current]);
 
   return (
-    <div ref={vantaRef} className="">
+    <div ref={vantaRef} className="w-full h-full">
       {children}
     </div>
   );

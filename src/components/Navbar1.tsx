@@ -1,7 +1,10 @@
 "use client";
 
-import { Book, Menu, Sunset, Trees, Zap, Sun, Moon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useState } from "react";
+import { useEffect } from "react";
+import { Book, Menu, Sunset, Trees, Zap, Sun, Moon }
+                    from "lucide-react";
 
 import {
   Accordion,
@@ -144,9 +147,15 @@ const Navbar1 = ({
 }: Navbar1Props) => {
 
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  // prevent hydration mismatch
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
-    <section className={cn("sticky top-0 z-50 bg-background/30 backdrop-blur-sm border-b border-border/50", className)}>
+    <section className={cn("fixed top-0 z-50 bg-background/30 backdrop-blur-sm border-b border-border/50", className)}>
       <div className="w-full px-10">
 
         {/* Desktop Menu */}
@@ -171,16 +180,21 @@ const Navbar1 = ({
               </NavigationMenu>
             </div>
           </div>
-          <div className="flex gap-2">
+          <div className="flex items-center gap-2">
             <Button
               variant="outline"
               size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             >
-              {theme === "dark" ? (
-                <Sun className="size-4" />
+              {mounted ? (
+                theme === "dark" ? (
+                  <Sun className="size-4" />
+                ) : (
+                  <Moon className="size-4" />
+                )
               ) : (
-                <Moon className="size-4" />
+                // prevents layout shift
+                <div className="size-4" />
               )}
             </Button>
             <Button asChild variant="outline" size="sm">

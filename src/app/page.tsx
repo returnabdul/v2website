@@ -19,6 +19,8 @@ export default function Home() {
                 }}
 
                 // TODO: add manu items
+
+                className="w-full"
             />
             <main>
                 <LandingPage />

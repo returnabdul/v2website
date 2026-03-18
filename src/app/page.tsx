@@ -1,5 +1,4 @@
 import { LandingPage }      from "@src/components/LandingPage";
-import { StatsSection }     from "@src/components/StatsSection";
 import { MissionSection }   from "@src/components/MissionSection";
 import { EventsSection }    from "@src/components/EventsSection";
 import { TopicsSection }    from "@src/components/TopicsSection";
@@ -24,7 +23,6 @@ export default function Home() {
             />
             <main>
                 <LandingPage />
-                <StatsSection />
                 <MissionSection />
                 <EventsSection />
                 <TopicsSection />
